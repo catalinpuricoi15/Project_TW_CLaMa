@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>ClassHub</title>
+    <link rel="stylesheet" href="../CSS/auth.css">
+</head>
+
+<body>
+
+    <div class="auth-section">
+        <div>
+            <img src='../Images/SVG/ClassHub.svg' alt='Official logo' class="logo">
+        </div>
+        <div class="auth-box">
+            <div class="button-auth-box">
+                <div id="btn"> </div>
+                <button type="login" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="register" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+
+            <form id="login" class="login-group">
+                <input type="text" class="input-field" placeholder="Username" required>
+                <input type="text" class="input-field" placeholder="Enter Password" required>
+                <div>
+                    <input type="checkbox" class="check-box" id="check-rem-pass" name="check-rem-pass">
+                    <label for="check-rem-pass">Remember Password</label>
+                </div>
+                <button type="submit" class="submit-btn">Log In</button>
+            </form>
+
+            <form id="register"  class="register-group">
+                <input type="text" class="input-field" placeholder="Username" required>
+                <input type="email" class="input-field" placeholder="Email ID" required>
+                <input id="password" type="text" class="input-field" placeholder="Enter Password" required>
+                <input id="confirm_password" type="text" class="input-field" placeholder="Confirm Password" required>
+                <div>
+                    <input type="checkbox" class="check-box" id="check-student" name="check-student">
+                    <label for="check-student">Student</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" class="check-box" id="check-profesor" name="check-profesor">
+                    <label for="check-profesor">Profesor</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" class="check-box" id="agree-terms" name="agree-terms">
+                    <label for="agree-terms">I agree to the terms & conditions</label>
+                </div>
+
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+<script src="../JS/auth.js"> </script>
+
+</html>
