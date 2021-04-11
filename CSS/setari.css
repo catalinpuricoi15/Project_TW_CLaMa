@@ -9,28 +9,21 @@
     width: 100%;
     background-color: #CEE7FF;
     background-position: center;
-    background-size: cover;
-    position: absolute;
+    /* background-size: cover; */
+    /* position: absolute; */
 }
 
-.logo
-{
-    height: 5%;
-    width: 11%;
-    margin-top: 2rem;
-    margin-left: 2rem;
-}
 
 .auth-box {
     width: 400px;
     height: 500px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    background: rgb(255, 255, 255);
     overflow: hidden;
-    border-radius: 10px;
+    /* border-radius: 100px; */
 }
 
 .button-auth-box {
@@ -60,18 +53,13 @@
     transition: .5s;
 }   
 
-.login-group {
-    top: 33%;
-    position: absolute;
-    width: 75%;
-    transition: .5s;
-}
+
 
 .register-group {
-    top: 25%;
-    position: absolute;
+    /* top: 25%; */
+    /* position: absolute; */
     width: 75%;
-    transition: .5s;
+    /* transition: .5s; */
 }
 
 .input-field {
@@ -105,10 +93,7 @@
     margin-bottom: 15px;
 }
 
-#login {
-    left: 50px;
-}
 
 #register {
-    left: 450px;
+    left: 50px;
 }
