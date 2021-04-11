@@ -3,6 +3,7 @@
 <head>
     <title>ClassHub</title>
     <link rel="stylesheet" href="../../CSS/main.css">
+    <link rel="stylesheet" href="../../CSS/setari.css">
 </head>
 
 <body>
@@ -39,34 +40,45 @@
             </div>
             <div class="user" onclick="goTo('setari.html')">
                 <div class="col-2 flex-container flex-row">
-                        <div class="userImage">
-                            <img src='../../Images/SVG/UserCircle.svg' class="userImage2">
-                        </div> 
-                        <div class="row-2">
-                            Profesor 
-                        </div>
+                    <div class="userImage">
+                        <img src='../../Images/SVG/UserCircle.svg' class="userImage2">
+                    </div>
+                    <div class="row-2">
+                        Profesor
+                    </div>
                 </div>
-                
+
                 <div class="col-2">
                     Vârlan Cosmin
                 </div>
             </div>
         </div>
-        <div class="main-box ">
-            
-            <div class="page-aligned">
-                    <br><br>
-                    <h2 id="attendance-code">
-                    Pentru prezenta folositi codul: 
-                    </h2>
-            </div>
 
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="auth-box">
+
+            <form id="register" class="register-group">
+                <input type="text" class="input-field" placeholder="Utilizator" name="username" id="username" required>
+                <input type="text" class="input-field" placeholder="Noua parola:" name="password" id="password"
+                    required>
+                <input type="text" class="input-field space" placeholder="Confirma parola" name="password"
+                    id="confirmPassword" required>
+                <input type="text" class="input-field space" placeholder="Adresa" name="adress" id="adress" required>
+                <input type="text" class="input-field space" placeholder="Oras" name="city" id="city" required>
+                <input type="text" class="input-field space" placeholder="Facultate" name="facultate" id="facultate" required>
+                <button type="submit" class="submit-btn space" name="submit-btn" id="submit-btn">Save</button>
+
+            </form>
         </div>
+
     </div>
 
 </body>
 
 <script src="../../JS/main.js"> </script>
-<script src="../../JS/attendance.js"> </script>
+<script src="../../JS/home.js"> </script>
 
 </html>
