@@ -5,13 +5,13 @@ var z = document.getElementById("btn");
 
 function register() {
 
-    x.style.left = "-400px";
+        x.style.left = "-400px";
     y.style.left = "50px";
     z.style.left = "110px";
 }
 
 function login() {
-    x.style.left = "50px";
+        x.style.left = "50px";
     y.style.left = "450px";
     z.style.left = "0px";
 }
@@ -34,10 +34,10 @@ password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
 
 function validate() {
-    if (username.value === "profesor")
+    if(username.value === "profesor" )//&& login_pass.value === "catalin")
         return true;
 
-    if (username.value === "student")
+    if(username.value === "student" )//&& login_pass.value === "cata")
         return true;
 
     return false;
@@ -45,16 +45,16 @@ function validate() {
 
 function getType(user) {
     if (user === "student")
-        return "students";
-    return "profs";
+        return "studenti";
+    return "profesori";
 }
 
 function submitLogin() {
-
-    if (!validate())
+    
+    if(!validate())
         alert("username and password don't match");
-    else {
+    else{
         var type = getType(username.value);
-        window.location.href = type + "/home.html?username=" + username.value;
+        window.location.href =  type + "/home.html?username=" + username.value;
     }
 }

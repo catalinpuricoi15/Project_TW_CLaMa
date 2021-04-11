@@ -9,22 +9,24 @@
 
     <div class="main">
         <div>
-            <img src='../../Images/SVG/ClassHub.svg' alt='Official logo' class="logo" href="goTo('home.html')">
+            <img src='../../Images/SVG/ClassHub.svg' alt='Official logo' class="logo" onclick="goTo('home.html')">
         </div>
 
-        <div class="toolbox">
 
+        <div class="toolbox">
             <button type="button" class="toggle-btn" onclick="goTo('orar.html')">Orar</button>
             <button type="button" class="toggle-btn" onclick="goTo('clase.html')">Clase</button>
-            <button type="button" class="toggle-btn" onclick="goTo('setari.html')">Setari cont</button>
-            <button type="button" class="toggle-btn" onclick="goTo('../auth.html')">Logout</button>
 
         </div>
 
         <div id="main-box" class="main-box">
-
-            <div id="info"></div>
-            <div id="actions"></div>
+            
+            <div class="page-aligned">
+                    <br><br>
+                    <h2 id="attendance-code">
+                    Pentru prezenta folositi codul: 
+                    </h2>
+            </div>
 
         </div>
     </div>
@@ -32,6 +34,6 @@
 </body>
 
 <script src="../../JS/main.js"> </script>
-<script src="../../JS/clasa.js"> </script>
+<script src="../../JS/attendance.js"> </script>
 
 </html>
