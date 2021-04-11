@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>Class Manager</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="References.css">
+</head>
+
+<body>
+    <header>
+        <b>ClassHub Class Manager</b>
+    </header>
+
+
+    <section typeof="sa:AuthorsList">
+        <h1>Autori</h1>
+        <ul>
+            <li typeof="sa:ContributorRole" property="schema:author">
+                <span typeof="schema:Person" resource="">
+                    <meta property="schema:givenName" content="Constantin">
+                    <meta property="schema:familyName" content="Puricoi">
+                      <span property="schema:name">Puricoi Cătălin</span>
+
+                </span>
+
+                <ul>
+                    <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                        <a href="mailtog:constantin.puricoi@info.uaic.ro" property="schema:email">constantin.puricoi@info.uaic.ro</a>
+                    </li>
+
+                </ul>
+
+
+                <li typeof="sa:ContributorRole" property="schema:author">
+                    <span typeof="schema:Person" resource="">
+                        <meta property="schema:givenName" content="Claudiu">
+                        <meta property="schema:familyName" content="Stoian">
+                          <span property="schema:name">Stoian Claudiu</span>
+
+                    </span>
+
+                    <ul>
+                        <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                            <a href="mailto:claudiu.stoian@info.uaic.ro" property="schema:email">claudiu.stoian@info.uaic.ro</a>
+                        </li>
+
+                    </ul>
+
+        </ul>
+
+        <div role="contentinfo">
+
+            <h4>GitHub Repository</h4>
+            <a href="https://github.com/catalinpuricoi15/Project_TW_CLaMa">Project_TW_CLaMa</a>
+
+        </div>
+
+    </section>
+
+
+    <section id="introducere" role="doc-introduction">
+        <h1>Introducere</h1>
+        <p>
+            Această documentație are rolul de a detalia utilizarea aplicației web ClassHub.
+        </p>
+        <p>
+            ClassHub are o interfață intuitivă şi îţi permite să creezi rapid grupuri şi clase, să aloci și să corectezi teme, să programezi lucrări de control şi teze, să urmăreşti progresul elevilor şi nu doar atât. Centralizând totul pe o singură platformă, eliminăm birocraţia şi te ajutăm să câştigi timp pentru activitatea didactică.
+        </p>
+    </section>
+
+    <section id="descriereGenerala" property="schema:description">
+        <h1>Descriere Generala</h1>
+        
+        <h2>Functionalitati</h2>
+        <p>
+            Funcționalitățile aplicației se pot plasa în două categorii in funcție de utilizator, cele două fiind de:
+        </p>
+        <h3>Student</h3>
+        <p>
+            Stundentul are posibilitatea de a folosi ClassHub pentru :
+        </p>
+        <ul>
+            <li>a se alatura unei Clase</li>
+            <li>a își confirma prezenta la activități</li>
+            <li>a consulta catalogul</li>
+            <li>a vedea orarul</li>
+            <li>a rezolva sarcinile și temele atribuite de către profesori</li>
+            <li>a avea acces la contul lui de student si datele acestuia</li>
+        </ul>
+        <h3>Profesor</h3>
+        <p>
+            Profesorul are posibilitatea de a folosi ClassHub pentru :
+        </p>
+        <ul>
+            <li>a crea grupe de studenți pentru materiile lor</li>
+            <li>a accepta sau a respinge studenți în clasă</li>
+            <li>a pune note și evalua studenții</li>
+            <li>a alege o metodă de evaluare si notare proprie</li>
+            <li>a consulta catalogul</li>
+            <li>a vedea orarul</li>
+            <li>a face prezența</li>
+        </ul>
+        <h2>Tehnologii utilizate</h2>
+        <p>
+            Interfata a fost realizata cu ajutorul HTML5 si CSS3, respectiv javascript pentru diferitele interacțiuni ale utilizatorului cu aplicația.
+        </p>
+    </section>
+    <section id="interfataAplicației" property="schema:description">
+        <h1>Interfata Aplicației</h1>
+        <p>Aceasta interfata a fost aleasa datorita simplitatii experientei utilizatorului si rapiditatea de a invata sa fie utilizata. 
+        </p>
+        <p>Bara de navigatie este un element comun al paginilor celor 2 tipuri de utilizatori, aceasta avand:</p>
+        <ul>
+            <li>”Orar”, un buton care ne duce spre orarul utilizatorului</li>
+            <li>”Clase”, pagina claselor la care participa/pe care le detine utilizatorul in functie de caz</li>
+            <li>”Setari”, daca dorim sa realizam cateva modificari asupra contului pe acest buton vom apasa</li>
+            <li>"Logout", un buton ce permite parasirea platformei si redirectionarea catre pagina de autentificare</li>
+        </ul>
+        
+    </section>
+    <section id="caracteristiciAplicație" property="schema:description">
+        <h1>Caracteristicile Aplicației</h1>
+        <h2>Autentificarea/Inregsitrarea</h2>
+        <p>
+            Atunci cand un utilizator acceseaza o pagina a aplicatie fara a fi autentificat, acesta este redirectionat la pagina de autentificare automat. 
+Un utilizator se poate autentifica folosind un cont de student sau un cont de profesor - cel din urma avand mai multe drepturi. In momentul de fata 
+aplicatie permite autentificare in modul student folosind numele "student" cu orice parola, iar in modul profesor folosing numele "profesor" cu 
+orice parola.
+        </p>
+        <h2>Student</h2>
+        <h3>Participarea la cursuri</h3>
+        <p>
+            Un student poate participa la un curs dupa ce iși introduce id-ul și este acceptat de către profesor.
+        </p>
+        <h3>Prezența la ora</h3>
+        <p>
+            Un student isi poate confirma prezența la ora prin introducerea codului unic creat de către profesor.
+        </p>
+        <h3>Predarea temelor</h3>
+        <p>
+            Studentul va avea posibilitatea de a iși încărca temele si fișierele necesare cursului. 
+        </p>
+        <h2>Profesor</h2>
+        <h3>Crearea și gestionarea unui curs</h3>
+        <p>
+            Profesorul isi poate crea clasele necesare cursului, accepta sau respinge accesul studenților la acestea.
+        </p>
+        
+        <h3>Notarea</h3>
+        <p>
+            Profesorul poate nota stundenții, notele fiind prezente într-un catalog care poate fi ulterior exportat. Nota finală se poate calcula după o metodă aleasă de profesor.
+        </p>
+        <h3>Crearea temelor</h3>
+        <p>
+            Profesorul poate adăuga teme claselor sale, acestea având o descriere și un termen limită.
+        </p>
+    </section>
+
+
+
+    <section role="doc-bibliography" id="bibliografie">
+        <h1>
+            Bibliografie
+        </h1>
+
+        <h4> Site-ul materiei Tehnologii Web</h4>
+        <span property="schema:notation" typeof="schema:WebPage" resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/">
+            <cite property="schema:name">
+                <a href="https://profs.info.uaic.ro/~busaco/teach/courses/web/"> Tehnologii Web</a>
+            </cite>
+
+        </span>
+
+        <h4> Resurse Educaționale</h4>
+        <span property="schema:notation" typeof="schema:WebPage" resource="https://www.w3schools.com">
+            <cite property="schema:name">
+                
+                   
+                        <a href="https://www.w3schools.com/html"> Tutoriale HTML5</a>
+                    </cite>
+                                       
+                    <cite property="schema:name">
+                        <a href="https://www.w3schools.com/css">Tutoriale CSS3</a>
+                   
+               
+            
+            </cite>
+
+        </span>
+
+        
+
+    </section>
+
+</body>
+
+</html>
