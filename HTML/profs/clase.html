@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <title>ClassHub</title>
+    <link rel="stylesheet" href="../../CSS/main.css">
+</head>
+
+
+<body>
+
+
+    <div class="main" >
+        <div>
+            <img src='../../Images/SVG/ClassHub.svg' alt='Official logo' class="logo" onclick="goTo('home.html')">
+        </div>
+
+        <div class="toolbox">
+            <button type="button" class="toggle-btn" onclick="goTo('orar.html')">Orar</button>
+            <button type="button" class="toggle-btn" onclick="goTo('clase.html')">Clase</button>
+            <button type="button" class="toggle-btn" onclick="goTo('setari.html')">Setari cont</button>
+            <button type="button" class="toggle-btn" onclick="goTo('../auth.html')">Logout</button>
+
+        </div>
+
+        <div id="main-box" class="main-box">
+            
+            <div id="actions">
+                <button type="button" class="toggle-btn" onclick="addClass()">Add class</button>
+            </div>
+
+            <div id="classes">
+                
+                <div id="123" onclick='goToClass("123")'>
+                    Id clasa = 123
+                    click pt ceva
+                </div>
+
+
+                <div id="321" onclick='goToClass("321")'>
+                    Id clasa = 321
+                    click pt ceva
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+<script src="../../JS/main.js"> </script>
+<script src="../../JS/clase.js"> </script>
+
+</html>

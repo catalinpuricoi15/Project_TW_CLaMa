@@ -3,6 +3,7 @@
 <head>
     <title>ClassHub</title>
     <link rel="stylesheet" href="../CSS/auth.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -19,36 +20,38 @@
             </div>
 
             <form id="login" class="login-group">
-                <input type="text" class="input-field" placeholder="Username" required>
-                <input type="text" class="input-field" placeholder="Enter Password" required>
-                <div>
-                    <input type="checkbox" class="check-box" id="check-rem-pass" name="check-rem-pass">
-                    <label for="check-rem-pass">Remember Password</label>
-                </div>
-                <button type="submit" class="submit-btn">Log In</button>
+                <input type="text" class="input-field" placeholder="Utilizator" name="username" id="username" required>
+                <input type="text" class="input-field space" placeholder="Introduceti parola" name="password"
+                    id="loginPassword" required>
+                <input type="checkbox" class="space" name="checkbox-remindPass" id="checkbox-remindPass"> Retine parola
+
+                <button type="button" class="submit-btn" name="button-login" id="button-login"
+                    onclick="submitLogin()">Log In</button>
             </form>
 
-            <form id="register"  class="register-group">
-                <input type="text" class="input-field" placeholder="Username" required>
-                <input type="email" class="input-field" placeholder="Email ID" required>
-                <input id="password" type="text" class="input-field" placeholder="Enter Password" required>
-                <input id="confirm_password" type="text" class="input-field" placeholder="Confirm Password" required>
-                <div>
-                    <input type="checkbox" class="check-box" id="check-student" name="check-student">
-                    <label for="check-student">Student</label>
-                </div>
+            <form id="register" class="register-group">
+                <input type="text" class="input-field" placeholder="Utilizator" name="username" id="username" required>
+                <input type="email" class="input-field" placeholder="Email ID" name="email" id="email" required>
+                <input type="text" class="input-field" placeholder="Introduceti parola" name="password" id="password"
+                    required>
+                <input type="text" class="input-field space" placeholder="Confirma parola" name="password"
+                    id="confirmPassword" required>
 
-                <div>
-                    <input type="checkbox" class="check-box" id="check-profesor" name="check-profesor">
-                    <label for="check-profesor">Profesor</label>
-                </div>
+                <p class="space">Doresc sa creez un cont de:</p>
+                <div class="space">
+                    <label>
+                        <input type="radio" name="radio-student" id="radio-student"> Student
+                    </label>
 
-                <div>
-                    <input type="checkbox" class="check-box" id="agree-terms" name="agree-terms">
-                    <label for="agree-terms">I agree to the terms & conditions</label>
+                    <label>
+                        <input type="radio" name="radio-profesor" id="radio-profesor"> Profesor
+                    </label>
                 </div>
+                <input type="checkbox" class="space" name="checkbox-terms" id="checkbox-terms"> Sunt de acord cu
+                termenii si conditiile
 
-                <button type="submit" class="submit-btn">Register</button>
+                <button type="submit" class="submit-btn" name="submit-btn" id="submit-btn">Register</button>
+
             </form>
         </div>
     </div>
