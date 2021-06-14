@@ -2,12 +2,14 @@
 
 namespace core\form;
 
+use core\database\DbModel;
 use core\Model;
 
 class InputField extends BaseField
 {
     public const TYPE_TEXT = 'text';
     public const TYPE_PASSWORD = 'password';
+    public const TYPE_DATE = 'date';
 
     public string $type;
 
@@ -21,6 +23,12 @@ class InputField extends BaseField
     public function passwordField()
     {
         $this->type = self::TYPE_PASSWORD;
+        return $this;
+    }
+
+    public function dateField()
+    {
+        $this->type = self::TYPE_DATE;
         return $this;
     }
 

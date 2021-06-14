@@ -1,33 +1,39 @@
 
-<link rel="stylesheet" href="../css/classes.css">
 
 <div class="main-box ">
 
     <div id="actions" class="page-aligned">
         <br><br><br><br>
-        <button type="submit" class="submit-btn" name="submit-btn" id="submit-btn"> creeaza o noua clasa</button>
+        <?php if (!core\Application::$app->user->isStudent()): ?>
+            <a class="submit-btn" name="submit-btn" id="submit-btn" href="/newClass"> creeaza o noua clasa</a>
+        <?php else: ?>
+
+            <div id="actions" class="page-aligned">
+                <br><br><br><br>
+                <?php $form = \core\form\Form::begin('/newRequest', "post", 'newRequest') ?>
+                <input type="text" class="input-field" placeholder="Introdu id-ul clasei" name="code" id="code" required>
+                <button type="submit" class="submit-btn" name="submit-btn" id="submit-btn"> adauga clasa</button>
+                <?php echo \core\form\Form::end() ?>
+            </div>
+        <?php endif; ?>
+
 
     </div>
     <div id="classes" class="page-aligned">
 
 
-        <div id="class-123" class="class" onclick='goToClass("123")'>
-            <div class="class-name"> Tehnologii WEB</div>
-            <div class="class-info">
-                <div class="class-id"> #123</div>
-                <div class="class-supervisor"> Prof. Cosmin Varlan <br> Prof. Buraga Sabin</div>
+        <?php foreach ($classes as $class): ?>
+            <div id="class-123" class="class" onclick='goToClass(<?php echo $class->id ?>)'>
+                <div class="class-name"><?php echo $class->subject ?></div>
+                <div class="class-info">
+                    <div class="class-id"> <?php echo $class->code ?></div>
+                    <div class="class-supervisor"><?php echo $class->owner()->username ?></div>
+                </div>
             </div>
-        </div>
-
-        <div id="class-321" class="class">
-            <div class="class-name"> SGBD</div>
-            <div class="class-info">
-                <div class="class-id"> #321</div>
-                <div class="class-supervisor"> Prof. Cosmin Varlan</div>
-            </div>
-        </div>
+        <?php endforeach; ?>
 
     </div>
+
 </div>
 
-<script src="../js/classes.js"> </script>
+<script src="../js/classes.js"></script>

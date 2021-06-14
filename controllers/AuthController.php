@@ -10,11 +10,9 @@ use models\LoginForm;
 use models\Professor;
 use models\Student;
 use models\User;
-use core\middlewares\AuthMiddleware;
 
 class AuthController extends Controller
 {
-
 
     public function login(Request $request, Response $response)
     {
@@ -42,6 +40,7 @@ class AuthController extends Controller
             $user->loadData($request->getBody());
 
             if ($user->validate() && $user->save()) {
+
                 Application::$app->session->setFlash('success', 'Inregistrare realizata cu succes!!');
                 Application::$app->response->redirect('/login');
                 exit;

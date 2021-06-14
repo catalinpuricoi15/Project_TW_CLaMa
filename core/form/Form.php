@@ -5,9 +5,10 @@ use core\Model;
 use core\form\InputField;
 
 class Form{
+
     public static function begin($action, $method, $id)
     {
-        echo sprintf('<form action = "%s" method="%s" id = "%s">', $action, $method, $id);
+        echo sprintf('<form action = "%s" method="%s" id = "%s" enctype="multipart/form-data">', $action, $method, $id);
         return new Form();
     }
 
