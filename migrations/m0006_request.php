@@ -2,28 +2,26 @@
 
 use core\Application;
 
-class m0003_assignments
+class m0006_request
 
 {
     public function up()
     {
         $database = Application::$app->database;
-        $SQL = "CREATE TABLE assignments (
+        $SQL = "CREATE TABLE requests (
                 id INT AUTO_INCREMENT PRIMARY KEY,
+                idUser INT NOT NULL,
                 idClass INT NOT NULL,
-                title VARCHAR(255) NOT NULL,
-                requirement TEXT NOT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                deadline DATE NOT NULL,
-                file VARCHAR(255), 
+                FOREIGN KEY (idUser) references users(id) on delete CASCADE,
                 FOREIGN KEY (idClass) references classes(id) on delete CASCADE
-                )  ENGINE=INNODB;";
+                  )  ENGINE=INNODB;";
         $database->pdo->exec($SQL);
     }
 
     public function down(){
         $database = Application::$app->database;
-        $SQL = "DROP TABLE assignments";
+        $SQL = "DROP TABLE requests";
         $database->pdo->exec($SQL);
     }
 }

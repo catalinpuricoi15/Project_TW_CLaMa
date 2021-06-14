@@ -67,7 +67,7 @@ class User extends UserModel
         return $this->type;
     }
 
-    public function isStudent(){
+    public function isStudent(): bool{
         return $this->type == 'student';
     }
 

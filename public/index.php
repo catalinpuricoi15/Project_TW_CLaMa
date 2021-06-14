@@ -3,6 +3,7 @@
 use controllers\AssignmentController;
 use controllers\ClassesController;
 use controllers\ProfessorController;
+use controllers\RequestController;
 use core\Application;
 use controllers\AuthController;
 use controllers\SiteController;
@@ -28,5 +29,11 @@ $app->router->get('/class', [ClassesController::class, 'show']);
 $app->router->get('/classes', [ClassesController::class, 'index']);
 $app->router->get('/editClass', [ClassesController::class, 'edit']);
 $app->router->get('/newClass', [ClassesController::class, 'save']);
+$app->router->post('/newRequest', [RequestController::class, 'addRequest']);
+$app->router->post('/newClass', [ClassesController::class, 'store']);
+$app->router->post('/newAssignment', [AssignmentController::class, 'store']);
+$app->router->regex('/class\/[0-9]+/', [ClassesController::class, 'show'], 'get');
+$app->router->regex('/class\/request\/[0-9]+/', [RequestController::class, 'show'], 'get');
+
 
 $app->run();

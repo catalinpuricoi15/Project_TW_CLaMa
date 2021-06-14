@@ -27,11 +27,16 @@ class Router
         $this->routes['post'][$path] = $callback;
     }
 
+    public function regex($path, $callback, $method)
+    {
+        $this->routes['regex'][$method][$path] = $callback;
+    }
+
     public function resolve()
     {
         $path = $this->request->getPath();
         $method = $this->request->method();
-        $callback = $this->routes[$method][$path] ?? false;
+        $callback = $this->match($path, $method);
 
         if ($callback === false) {
             $this->response->setStatusCode(404);
@@ -55,5 +60,28 @@ class Router
         }
         return call_user_func($callback, $this->request, $this->response);
     }
+
+    private function match(mixed $path, string $method)
+    {
+
+        $selectedRoute = $this->routes[$method][$path] ?? false;
+
+        if($selectedRoute === false){
+            foreach ($this->routes['regex'][$method] as $route => $callback){
+                if(preg_match($route, $path)){
+                    $selectedRoute = $callback;
+                    break;
+                }
+            }
+        }
+
+        if($selectedRoute === false){
+            throw new NotFoundException();
+        }
+
+        return $selectedRoute;
+    }
+
+
 
 }

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../CSS/news.css">
+
 <div class="main-box ">
 
     <br>

@@ -43,6 +43,11 @@ class Request
             }
         }
         return $body;
-
     }
+
+    public function getParamForRoute(string $string)
+    {
+        return substr($this->getPath(),strlen($string));
+    }
+
 }
