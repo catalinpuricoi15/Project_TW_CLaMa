@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/css/classes.css">
     <link rel="stylesheet" href="./css/news.css">
     <link rel="stylesheet" href="/css/settings.css">
+    <link rel="stylesheet" href="/css/requests.css">
 
 </head>
 

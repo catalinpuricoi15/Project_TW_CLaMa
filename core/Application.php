@@ -19,7 +19,7 @@ class Application
     public Database $database;
     public Config $config;
     public Session $session;
-    public ?UserModel $user;
+    public ?UserModel $user = null;
     public View $view;
 
     public function __construct($rootPath)

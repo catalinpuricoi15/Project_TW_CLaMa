@@ -31,43 +31,31 @@
 
         <br><br>
         <br><br>
-        <?php $form = \core\form\Form::begin('/newAssignment', "post", 'newAssignment') ?>
+        <?php if ($class->numberOfAssignments != 0): ?>
+            <?php $form = \core\form\Form::begin('/newAssignment', "post", 'newAssignment') ?>
 
-        <div class="post-form">
-            <h2><b> Posteaza o noutate sau tema </b></h2><br><br>
+            <div class="post-form">
+                <h2><b> Posteaza o noutate sau tema </b></h2><br><br>
 
-            <?php echo $form->field($model, 'title') ?>
+                <?php echo $form->field($model, 'title') ?>
 
-            <!--            <input id="post_title" type="text" class="input-field" placeholder="Title" required><br><br>-->
+                <!--            <input id="post_title" type="text" class="input-field" placeholder="Title" required><br><br>-->
 
-            <?php echo $form->field($model, 'requirement') ?>
+                <?php echo $form->field($model, 'requirement') ?>
 
-            <input type="hidden" name="idClass" value="<?php echo $class->id; ?>">
+                <input type="hidden" name="idClass" value="<?php echo $class->id; ?>">
 
-            <?php echo $form->field($model, 'deadline')->dateField() ?>
+                <?php echo $form->field($model, 'deadline')->dateField() ?>
 
-
-            <!--            <input id="post_content" type="text" class="input-field" placeholder="Content" required><br><br>-->
-
-<!--            <div>-->
-<!--                <input type="checkbox" class="check-box" id="check-assignment" name="check-assignment"-->
-<!--                       onclick="postTypeChanged()">-->
-<!--                <label for="check-assignment">Tema</label>-->
-<!--            </div>-->
-<!--            <br>-->
-<!--            <div id="date-assignment-div" style="display:none">-->
-<!--                <label for="date-assignment">Data predarii </label>-->
-<!--                <input type="date" id="date-assignment" name="date-assignment" required>-->
-<!--            </div>-->
-<!--            <br>-->
-<!---->
-<!--            <label class="space" for="file-upload">Incarca un fisier:</label>-->
-<!--            <input type="file" id="file-upload" name="file-upload">-->
-<!---->
-<!--            <br>-->
+                <button type="submit" class="submit-btn space">Post</button>
+            </div>
+            <?php echo \core\form\Form::end() ?>
+        <?php else: ?>
+            <?php $form = \core\form\Form::begin("/changeNrOfAssignments/$class->id", "post", 'changeNrAssignment') ?>
+            <?php echo $form->field($class, 'numberOfAssignments') ?>
             <button type="submit" class="submit-btn space">Post</button>
-        </div>
-        <?php echo \core\form\Form::end() ?>
+            <?php echo \core\form\Form::end() ?>
+        <?php endif; ?>
 
         <br><br><br><br>
 
@@ -76,26 +64,21 @@
     <div class="news-title">
         <h3><b> Noutati si Teme </b></h3>
     </div>
-<!--    <div id="news" class="news-panel">-->
-<!--        <div id="post" class="post news">-->
-<!--            <div class="post-title"> Lectura de vacanta</div>-->
-<!--            <div class="post-info">-->
-<!--                <div class="post-date"> primavara 2021</div>-->
-<!--                <div class="post-author"> autor</div>-->
-<!--            </div>-->
-<!--            <div class="post-content news-description"> ...</div>-->
-<!--        </div>-->
-<!---->
-<!--        <div id="assignment-001" class="post assignment" onclick="assignmentClick('assignment-001')">-->
-<!--            <div class="post-title"> Tema 2021</div>-->
-<!--            <div class="post-info">-->
-<!--                <div class="post-date"> deadline: azi</div>-->
-<!--                <div class="post-author"> autor</div>-->
-<!--            </div>-->
-<!--            <div class="post-content assignment-description"> Buna ziua! Aceasta este tema pentru saptamana 2.-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+
+    <?php foreach ($assignments as $assignment): ?>
+        <div id="news" class="news-panel">
+            <div id="post" class="post news">
+                <div class="post-title"> <?php echo $assignment->title ?></div>
+                <?php var_dump($assignment->getStudentsWork()) ?>
+                <div class="post-info">
+                    <div class="post-date"> <?php echo $assignment->created_at ?> </div>
+                    <div class="post-date"> <?php echo $assignment->deadline ?> </div>
+                    <div class="post-author"> autor</div>
+                </div>
+                <div class="post-content news-description"> <?php echo $assignment->requirement ?></div>
+            </div>
+        </div>
+    <?php endforeach; ?>
 
 </div>
 <!---->

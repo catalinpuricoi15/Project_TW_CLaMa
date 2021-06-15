@@ -12,6 +12,7 @@
                 <br><br><br><br>
                 <?php $form = \core\form\Form::begin('/newRequest', "post", 'newRequest') ?>
                 <input type="text" class="input-field" placeholder="Introdu id-ul clasei" name="code" id="code" required>
+                <input type="hidden" name="idUser" value="<?php echo \core\Application::$app->user->id ?>">
                 <button type="submit" class="submit-btn" name="submit-btn" id="submit-btn"> adauga clasa</button>
                 <?php echo \core\form\Form::end() ?>
             </div>

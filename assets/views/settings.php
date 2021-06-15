@@ -21,11 +21,10 @@ $this->title = 'ClassHub-Settings';
                id="confirmPassword" required>
         <input type="text" class="input-field space" placeholder="Adresa" name="adress" id="adress" required>
         <input type="text" class="input-field space" placeholder="Oras" name="city" id="city" required>
-        <input type="text" class="input-field space" placeholder="Facultate" name="facultate" id="facultate"
-               required>
         <button type="submit" class="submit-btn space" name="submit-btn" id="submit-btn">Save</button>
 
     </form>
+
 </div>
 
 <script src="../js/home.js"> </script>

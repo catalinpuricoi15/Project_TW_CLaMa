@@ -11,7 +11,7 @@
 
         <input type="hidden" name="idUser" value="<?php echo \core\Application::$app->user->id; ?>">
 
-        <?php echo $form->field($model, 'numberOfNotes') ?>
+        <?php echo $form->field($model, 'numberOfAssignments') ?>
 
         <button type="submit" class="submit-btn" name="addClass" id="addClass">Adauga clasa</button>
 
