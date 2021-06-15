@@ -1,0 +1,15 @@
+<?php
+
+namespace models;
+
+use core\Model;
+
+class Catalog extends Model
+{
+    public string $idClass = '';
+    public array $students = [];
+    public array $assignments = [];
+
+
+
+}

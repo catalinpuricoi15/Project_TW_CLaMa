@@ -48,4 +48,9 @@ class Assignment extends DbModel
         return $this->belongsTo('idClass', ClassForm::class);
     }
 
+
+    public function getStudentsWork(){
+        return $this->belongsToMany(Work::class);
+    }
+
 }

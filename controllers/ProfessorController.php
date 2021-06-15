@@ -18,10 +18,6 @@ class ProfessorController extends Controller
         return $this->render('profesori/attendace');
     }
 
-    public function catalog()
-    {
-        return $this->render('profesori/catalog');
-    }
 
     public function requests()
     {
