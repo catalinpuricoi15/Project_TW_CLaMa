@@ -21,20 +21,37 @@
     margin-left: 2rem;
 }
 
-.auth-box {
-    width: 400px;
-    height: 500px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    overflow: hidden;
-    border-radius: 10px;
+@media screen and (min-width: 500px) {
+    .auth-box {
+        width: 400px;
+        height: 700px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 500px) {
+    .auth-box {
+        width: 80vw;
+        height: 700px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        overflow: hidden;
+        border-radius: 10px;
+    }
 }
 
 .button-auth-box {
     width: 220px;
+    height: auto;
     margin: 60px auto;
     position: relative;
     border-radius: 30px;
@@ -63,7 +80,7 @@
 .input-field {
     width: 100%;
     padding: 10px;
-    margin: 5px ;
+    margin-bottom: 5px ;
     border: 0;
     border-bottom: 1px solid #999;
     outline: none;
@@ -112,4 +129,3 @@
     transition: .5s;
     left: 450px;
 }
-

@@ -22,7 +22,7 @@ class RequestController extends Controller
     {
         $idClass = $request->getParamForRoute('/class/request/');
         $requests = Model::find(['idClass' => $idClass]);
-        return $this->render('profesori/requests', [
+        return $this->render('requests', [
             'requests' => $requests
         ]);
     }

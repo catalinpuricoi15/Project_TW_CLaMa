@@ -13,6 +13,10 @@ use models\User;
 
 class AuthController extends Controller
 {
+    public function redirect(Request $request, Response $response)
+    {
+        $response->redirect('/login');
+    }
 
     public function login(Request $request, Response $response)
     {
@@ -41,6 +45,22 @@ class AuthController extends Controller
 
             if ($user->validate() && $user->save()) {
 
+//                $to = $email;
+//                $subject = "Email verification";
+//                $message = "
+//                <html>
+//                <head>
+//                <body>
+//                <p><strong>
+//                Domnule/Doamna {$user->getFullName()}
+//
+//
+//</strong></p>
+//</body>
+//
+//</head>"
+//                </html>;
+
                 Application::$app->session->setFlash('success', 'Inregistrare realizata cu succes!!');
                 Application::$app->response->redirect('/login');
                 exit;
@@ -65,5 +85,15 @@ class AuthController extends Controller
     public function settings()
     {
         return $this->render('settings');
+    }
+
+    public function updateAccountData(Request $request, Response $response)
+    {
+        $body = $request->getBody();
+        foreach (array_keys($body) as $attribute) {
+            Application::$app->user->{$attribute} = $body[$attribute];
+        }
+        Application::$app->user->update($body);
+        $response->redirect("/home");
     }
 }

@@ -14,8 +14,8 @@ class m0001_users
                 firstname VARCHAR(255) NOT NULL,
                 lastname VARCHAR(255) NOT NULL,
                 password VARCHAR(255) NOT NULL,
-                adresa VARCHAR(255),
-                oras VARCHAR(255),
+                adress VARCHAR(255),
+                city VARCHAR(255),
                 type VARCHAR(20) NOT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )  ENGINE=INNODB;";

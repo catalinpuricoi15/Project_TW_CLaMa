@@ -5,7 +5,7 @@ var z = document.getElementById("btn");
 
 function moveRegister() {
     x.style.left = "-400px";
-    y.style.left = "50px";
+    y.style.left = "30px";
     z.style.left = "110px";
 }
 

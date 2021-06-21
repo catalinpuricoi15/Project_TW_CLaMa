@@ -1,7 +1,6 @@
 <?php
 
 namespace core;
-use core\Application;
 use core\middlewares\BaseMiddleware;
 
 class Controller{

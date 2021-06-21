@@ -15,7 +15,9 @@ class m0003_assignments
                 requirement TEXT NOT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 deadline DATE NOT NULL,
-                file VARCHAR(255), 
+                file VARCHAR(255),
+                code_attendance VARCHAR(255),
+                attendance_created_at DATETIME,
                 FOREIGN KEY (idClass) references classes(id) on delete CASCADE
                 )  ENGINE=INNODB;";
         $database->pdo->exec($SQL);

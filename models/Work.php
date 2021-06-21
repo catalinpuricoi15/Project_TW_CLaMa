@@ -8,7 +8,9 @@ class Work extends DbModel
 {
     public string $idAssignment = '';
     public string $idUser = '';
-    public string $url = '';
+    public float $grade = 0.0;
+    public string $file = '';
+    public string $comment = '';
     //public string $message = '';
 
     public function tableName(): string
@@ -18,7 +20,7 @@ class Work extends DbModel
 
     public function attributes(): array
     {
-        return ['idUser', 'idAssignment', 'url'];
+        return ['idUser', 'idAssignment', 'file', 'grade', 'comment'];
     }
 
     public static function primaryKey(): string
@@ -31,5 +33,18 @@ class Work extends DbModel
         return [];
     }
 
+    public function getGrade(){
+        if($this->idUser == '')
+            return "Tema netrimisa";
+        if($this->grade == 0){
+            return "Tema neevaluta";
+        }
+
+        return $this->grade;
+    }
+
+    public function getStudent(){
+        return $this->belongsTo('idUser', User::class);
+    }
 
 }

@@ -1,5 +1,5 @@
 <?php
-/** @var $this \core\View  */
+/** @var $this \core\View */
 
 $this->title = 'ClassHub-Settings';
 
@@ -13,18 +13,16 @@ $this->title = 'ClassHub-Settings';
 <br>
 <div class="auth-box">
 
-    <form id="register" class="register-group">
-        <input type="text" class="input-field" placeholder="Utilizator" name="username" id="username" required>
-        <input type="text" class="input-field" placeholder="Noua parola:" name="password" id="password"
-               required>
-        <input type="text" class="input-field space" placeholder="Confirma parola" name="password"
-               id="confirmPassword" required>
-        <input type="text" class="input-field space" placeholder="Adresa" name="adress" id="adress" required>
-        <input type="text" class="input-field space" placeholder="Oras" name="city" id="city" required>
-        <button type="submit" class="submit-btn space" name="submit-btn" id="submit-btn">Save</button>
+    <?php $form = \core\form\Form::begin("/settings", "post", 'updateAccountData') ?>
 
-    </form>
+    <?php echo $form->field(\core\Application::$app->user, 'username') ?>
+    <?php echo $form->field(\core\Application::$app->user, 'adress') ?>
+    <?php echo $form->field(\core\Application::$app->user, 'city') ?>
+
+    <button type="submit" class="submit-btn space" id="submit-btn">Save</button>
+
+    <?php echo \core\form\Form::end() ?>
 
 </div>
 
-<script src="../js/home.js"> </script>
+<script src="../js/home.js"></script>

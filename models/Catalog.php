@@ -10,6 +10,10 @@ class Catalog extends Model
     public array $students = [];
     public array $assignments = [];
 
-
-
+    public function rules(): array
+    {
+        return [
+            'idClass' => [self::RULE_REQUIRE],
+        ];
+    }
 }

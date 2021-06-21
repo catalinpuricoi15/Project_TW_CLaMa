@@ -12,7 +12,9 @@ class m0004_work
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 idAssignment INT NOT NULL,
                 idUser INT NOT NULL,
-                url VARCHAR(255) NOT NULL,
+                file VARCHAR(255) NOT NULL,
+                grade DOUBLE,
+                comment VARCHAR(2000),
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 FOREIGN KEY (idAssignment) references assignments(id) on delete CASCADE,
                 FOREIGN KEY (idUser) references users(id) on delete CASCADE
