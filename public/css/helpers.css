@@ -1,0 +1,22 @@
+.align-start{
+    align-items: start;
+}
+.flex{
+    display: flex;
+}
+
+.smallHidden{
+    display: none;
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px){
+    .smallHidden{
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .smallHidden{
+        display: block;
+    }
+}

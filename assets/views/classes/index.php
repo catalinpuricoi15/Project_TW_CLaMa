@@ -28,7 +28,7 @@
                 <div class="class-name"><?php echo $class->subject ?></div>
                 <div class="class-info">
                     <div class="class-id"> <?php echo $class->code ?></div>
-                    <div class="class-supervisor"><?php echo $class->owner()->username ?></div>
+                    <div class="class-supervisor"><?php echo $class->owner()->getFullName() ?></div>
                 </div>
             </div>
         <?php endforeach; ?>

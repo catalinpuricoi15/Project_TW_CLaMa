@@ -20,7 +20,7 @@ class Request extends DbModel
 
     public function assignment()
     {
-        return $this->render('profesori/requests');
+        return $this->render('requests');
     }
 
     public function tableName(): string

@@ -32,6 +32,7 @@ abstract class Model
                 if (!is_string($ruleName)) {
                     $ruleName = $rule[0];
                 }
+
                 if ($ruleName == self::RULE_REQUIRE && !$value) {
                     $this->addErrorForRule($attribute, self::RULE_REQUIRE);
                 }

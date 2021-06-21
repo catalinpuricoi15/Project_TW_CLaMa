@@ -2,7 +2,7 @@
 
 use core\Application;
 
-class m0007_students_classes
+class m0006_students_classes
 
 {
     public function up()

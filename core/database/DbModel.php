@@ -88,11 +88,11 @@ abstract class DbModel extends Model
         return $class::findOne([$class::primaryKey() => $this->{$column}]);
     }
 
-    public function belongsToMany($class, $orderBy = [])
+    public function belongsToMany($class, $columnName = null, $orderBy = [])
     {
         try {
             $searchedClass = new ReflectionClass($class);
-            $currentClassName = (new ReflectionClass($this))->getShortName();
+            $currentClassName = $columnName ?? (new ReflectionClass($this))->getShortName();
             $searchedTableName = $searchedClass->getMethod("tableName")->invoke(new $class());
 
             $sql = "SELECT * FROM $searchedTableName WHERE id$currentClassName=:$currentClassName";

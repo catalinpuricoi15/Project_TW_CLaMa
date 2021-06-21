@@ -2,7 +2,7 @@
 
 use core\Application;
 
-class m0006_request
+class m0005_request
 
 {
     public function up()

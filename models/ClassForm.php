@@ -9,7 +9,7 @@ class ClassForm extends DbModel
     public string $subject = '';
     public string $idUser = '';
     public string $code = '';
-    public int $numberOfAssignments = 0;
+    public int $numberOfAssignments = 1;
 
     public function rules(): array
     {
@@ -24,7 +24,7 @@ class ClassForm extends DbModel
     {
         return [
             'subject' => 'Numele cursului',
-            'numberOfAssignments' => 'Numarul de note necesare'
+            'numberOfAssignments' => 'Numarul de teme necesare'
         ];
     }
 
@@ -48,6 +48,10 @@ class ClassForm extends DbModel
 
     public function owner(){
         return $this->belongsTo('idUser', User::class);
+    }
+
+    public function assignments(){
+        return $this->belongsToMany(Assignment::class, 'Class');
     }
 
 }

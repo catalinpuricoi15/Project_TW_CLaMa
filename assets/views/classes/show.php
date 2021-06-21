@@ -1,4 +1,4 @@
-<? php /***
+<?php /***
  * @var $model \models\User;
  */
 ?>
@@ -24,9 +24,8 @@
     <?php if (!core\Application::$app->user->isStudent()): ?>
 
         <div id="actions" class="page-aligned">
-            <button type="button" class="page-btn" onclick="doAction('/catalog')">catalog</button>
+            <a class="page-btn" href="/class/catalog/<?php echo $class->id ?>">catalog</a>
             <a class="page-btn" href="/class/request/<?php echo $class->id ?>">requests</a>
-            <button type="button" class="page-btn" onclick="doAction('/attendance')">prezenta curs</button>
         </div>
 
         <br><br>
@@ -39,13 +38,13 @@
 
                 <?php echo $form->field($model, 'title') ?>
 
-                <!--            <input id="post_title" type="text" class="input-field" placeholder="Title" required><br><br>-->
-
                 <?php echo $form->field($model, 'requirement') ?>
 
                 <input type="hidden" name="idClass" value="<?php echo $class->id; ?>">
 
                 <?php echo $form->field($model, 'deadline')->dateField() ?>
+
+                <?php echo $form->field($model, 'file')->fileField() ?>
 
                 <button type="submit" class="submit-btn space">Post</button>
             </div>
@@ -66,21 +65,22 @@
     </div>
 
     <?php foreach ($assignments as $assignment): ?>
-        <div id="news" class="news-panel">
-            <div id="post" class="post news">
-                <div class="post-title"> <?php echo $assignment->title ?></div>
-                <?php var_dump($assignment->getStudentsWork()) ?>
-                <div class="post-info">
-                    <div class="post-date"> <?php echo $assignment->created_at ?> </div>
-                    <div class="post-date"> <?php echo $assignment->deadline ?> </div>
-                    <div class="post-author"> autor</div>
+        <a id="news" class="news-panel" href="/class/assignment/<?php echo $assignment->id ?>">
+            <div id="post1" class="post news">
+                <div class="post-title">
+                    <div class="post-title"> <?php echo $assignment->title ?></div>
+                    <div class="post-info">
+                        <div class="post-date">Deadline: <?php echo $assignment->deadline ?> </div>
+                        <div class="post-author"> <?php echo $class->owner()->getFullName() ?> </div>
+                    </div>
+                    <div class="post-content news-description"> <?php echo $assignment->requirement ?></div>
+                    <?php if ($assignment->file != ''): ?>
+                        <a class="post-content news-description" href="<?php echo $assignment->file ?>" download="">Fisier
+                            incarcat</a>
+                    <?php endif; ?>
                 </div>
-                <div class="post-content news-description"> <?php echo $assignment->requirement ?></div>
             </div>
-        </div>
+        </a>
     <?php endforeach; ?>
 
 </div>
-<!---->
-<!--<script src="../../JS/class.js"></script>-->
-<!--<script src="../../JS/news.js"></script>-->

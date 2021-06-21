@@ -12,6 +12,7 @@ use core\Response;
 use models\Assignment;
 use models\Catalog;
 use models\ClassForm;
+use models\User;
 
 class ClassesController extends Controller
 {
@@ -24,7 +25,7 @@ class ClassesController extends Controller
     {
         if (!Application::$app->user->isStudent()) {
             $classes = ClassForm::find(['idUser' => Application::$app->user->id]);
-            return $this->render('profesori/classes/index',
+            return $this->render('classes/index',
                 compact('classes') // = ['classes' => $classes]
             );
         } else {
@@ -34,25 +35,35 @@ class ClassesController extends Controller
             foreach ($idClasses as $item) {
                 $classes[] = ClassForm::findOne(['id' => $item['idClass']]);
             }
-            return $this->render('profesori/classes/index',
+            return $this->render('classes/index',
                 compact('classes'));
         }
     }
 
-//    public function catalog(Request $request, Response $response)
-//    {
-//        $idClass = $request->getParamForRoute('/class/catalog');
-//        $class = ClassForm::findOne(['id' => $idClass]);
-//        $catalog = new Catalog();
-//        $students =
-//        return $this->render('profesori/catalog');
-//    }
+    public function catalog(Request $request, Response $response)
+    {
+        $idClass = $request->getParamForRoute('/class/catalog/');
+        $class = ClassForm::findOne(['id' => $idClass]);
+        $assignments = $class->assignments();
+        $catalog = new Catalog();
+        $students = [];
+        $idStudents = Database::find('students_classes', ['idClass' => $idClass]);
+
+        foreach ($idStudents as $item){
+            $students[] = User::findOne(['id' => $item['idUser']]);
+        }
+
+        $catalog->assignments = $assignments;
+        $catalog->students = $students;
+
+        return $this->render('catalog',['catalog' => $catalog]);
+    }
 
 
     public function save()
     {
         $classForm = new ClassForm();
-        return $this->render('profesori/classes/save',
+        return $this->render('classes/save',
             ['model' => $classForm]);
     }
 
@@ -61,7 +72,7 @@ class ClassesController extends Controller
         $idClass = $request->getParamForRoute('/class/');
         $class = ClassForm::findOne(['id' => $idClass]);
         $assignments = Assignment::find(['idClass' => $idClass]);
-        return $this->render('profesori/classes/show', [
+        return $this->render('classes/show', [
             'class' => $class,
             'model' => new Assignment(),
             'assignments' => $assignments
@@ -70,7 +81,7 @@ class ClassesController extends Controller
 
     public function edit()
     {
-        return $this->render('profesori/classes/edit');
+        return $this->render('classes/edit');
     }
 
     public function store(Request $request, Response $response)
@@ -84,7 +95,7 @@ class ClassesController extends Controller
             $response->redirect('/classes');
             return;
         }
-        return $this->render('profesori/classes/save', [
+        return $this->render('classes/save', [
             'model' => $classForm
         ]);
     }

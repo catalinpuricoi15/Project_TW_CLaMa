@@ -3,7 +3,7 @@
 use core\Application;
 
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>

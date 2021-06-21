@@ -2,6 +2,7 @@
 
 namespace core\form;
 
+use core\Application;
 use core\database\DbModel;
 use core\Model;
 
@@ -10,6 +11,7 @@ class InputField extends BaseField
     public const TYPE_TEXT = 'text';
     public const TYPE_PASSWORD = 'password';
     public const TYPE_DATE = 'date';
+    public const TYPE_FILE = 'file';
 
     public string $type;
 
@@ -29,6 +31,12 @@ class InputField extends BaseField
     public function dateField()
     {
         $this->type = self::TYPE_DATE;
+        return $this;
+    }
+
+    public function fileField()
+    {
+        $this->type = self::TYPE_FILE;
         return $this;
     }
 

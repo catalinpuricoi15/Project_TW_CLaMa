@@ -13,14 +13,13 @@ class ProfessorController extends Controller
         $this->registerMiddleware(new AuthMiddleware());
     }
 
-    public function attendace()
+    public function attendance()
     {
-        return $this->render('profesori/attendace');
+        return $this->render('attendance');
     }
-
 
     public function requests()
     {
-        return $this->render('profesori/request');
+        return $this->render('request');
     }
 }
