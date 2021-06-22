@@ -1,3 +1,15 @@
+.select-mean{
+    display: flex;
+    align-items: center;
+}
+
+.page-aligned-catalog {
+    overflow-x: scroll;
+    text-align: left;
+    padding: 25px;
+    color: black;
+}
+
 table.blueTable {
     border: 3px solid #1C6EA4;
     background-color: #C8EAFF;
@@ -5,17 +17,17 @@ table.blueTable {
     text-align: left;
     border-collapse: collapse;
 }
+
 table.blueTable td, table.blueTable th {
     border: 3px solid #AAAAAA;
     padding: 7px 10px;
 }
+
 table.blueTable tbody td {
     font-size: 13px;
     color: #2D3333;
 }
-table.blueTable tr:nth-child(even) {
-    background: #D0E4F5;
-}
+
 table.blueTable thead {
     background: #1C6EA4;
     background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
@@ -23,12 +35,14 @@ table.blueTable thead {
     background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
     border-bottom: 3px solid #444444;
 }
+
 table.blueTable thead th {
     font-size: 15px;
     font-weight: bold;
     color: #FFFFFF;
     border-left: 3px solid #C0F2F5;
 }
+
 table.blueTable thead th:first-child {
     border-left: none;
 }
@@ -43,13 +57,16 @@ table.blueTable tfoot {
     background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
     border-top: 2px solid #444444;
 }
+
 table.blueTable tfoot td {
     font-size: 14px;
 }
+
 table.blueTable tfoot .links {
     text-align: right;
 }
-table.blueTable tfoot .links a{
+
+table.blueTable tfoot .links a {
     display: inline-block;
     background: #1C6EA4;
     color: #FFFFFF;
@@ -57,25 +74,38 @@ table.blueTable tfoot .links a{
     border-radius: 5px;
 }
 
-.button-calculator{
-    width: 70px;
+.button-calculator {
+    width: 80px;
     height: 50px;
     font-size: 25px;
     margin: 4px;
     cursor: pointer;
     background: rgba(54, 109, 144, 0.94);
     border: none;
-    color:white;
+    color: white;
 }
-.textview-calculator{
-    width: 300px;
+
+.textview-calculator {
+    width: 340px;
     margin: 5px;
     font-size: 25px;
     padding: 5px;
 }
 
-.main-catalog{
-    position: absolute;
+.main-calculator {
+    width: 365px;
     left: 45%;
     background: #97b6d7;
+}
+
+.container-calculator{
+
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.add-mean{
+
 }

@@ -3,28 +3,30 @@
 use core\Application;
 
 ?>
+
 <!DOCTYPE html> 
 <html lang="en">
 
 <head>
     <title>ClassHub</title>
-    <link rel="stylesheet" href="../../css/auth.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ClassHub">
 </head>
 
 <body>
 
 <div class="main-box ">
-    <?php if (core\Application::$app->session->getFlash('success')): ?>
+    <?php if (Application::$app->session->getFlash('success')): ?>
         <div class="alert alert-succes">
-            <?php echo core\Application::$app->session->getFlash('success') ?>
+            <?php echo Application::$app->session->getFlash('success') ?>
         </div>
     <?php endif; ?>
 </div>
 
 <div class="auth-section">
     <div>
-        <img src='../../images/svg/ClassHub.svg' alt='Official logo' class="logo">
+        <img src='/images/svg/ClassHub.svg' alt='Official logo' class="logo">
     </div>
 
     <div class="auth-box">

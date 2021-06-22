@@ -1,6 +1,9 @@
-<?php /***
- * @var $model \models\User;
- */
+<?php
+
+use core\form\Form;
+use models\Assignment;
+use models\ClassForm;
+
 ?>
 
 <div class="main-box ">
@@ -9,13 +12,13 @@
         <br><br><br>
         <h1 class="highlited " style="text-decoration: underline;">Informatii clasa</h1><br>
         <br>
-        <span class="highlited">Name: </span> <span id="name"> <?php echo $class->subject ?>  </span><br>
+        <span class="highlited">Nume: </span> <span id="name"> <?php echo $class->subject ?>  </span><br>
         <br>
         <span class="highlited"> Codul: </span> <span id="id"> <?php echo $class->code ?>  </span><br>
         <br>
-        <span class="highlited"> Platforme </span> Zoom, Discord
+        <span class="highlited"> Platforme: </span> Zoom, Discord
         <br><br>
-        <span class="highlited"> Orar </span> Luni 9:00 - 12:00
+        <span class="highlited"> Orar: </span> Luni 9:00 - 12:00
         <br><br>
     </div>
 
@@ -31,7 +34,7 @@
         <br><br>
         <br><br>
         <?php if ($class->numberOfAssignments != 0): ?>
-            <?php $form = \core\form\Form::begin('/newAssignment', "post", 'newAssignment') ?>
+            <?php $form = Form::begin('/newAssignment', "post", 'newAssignment') ?>
 
             <div class="post-form">
                 <h2><b> Posteaza o noutate sau tema </b></h2><br><br>
@@ -48,12 +51,12 @@
 
                 <button type="submit" class="submit-btn space">Post</button>
             </div>
-            <?php echo \core\form\Form::end() ?>
+            <?php echo Form::end() ?>
         <?php else: ?>
-            <?php $form = \core\form\Form::begin("/changeNrOfAssignments/$class->id", "post", 'changeNrAssignment') ?>
+            <?php $form = Form::begin("/changeNrOfAssignments/$class->id", "post", 'changeNrAssignment') ?>
             <?php echo $form->field($class, 'numberOfAssignments') ?>
             <button type="submit" class="submit-btn space">Post</button>
-            <?php echo \core\form\Form::end() ?>
+            <?php echo Form::end() ?>
         <?php endif; ?>
 
         <br><br><br><br>
@@ -65,8 +68,9 @@
     </div>
 
     <?php foreach ($assignments as $assignment): ?>
-        <a id="news" class="news-panel" href="/class/assignment/<?php echo $assignment->id ?>">
-            <div id="post1" class="post news">
+
+        <a  class="news-panel" href="/class/assignment/<?php echo $assignment->id ?>">
+            <div  class="post news">
                 <div class="post-title">
                     <div class="post-title"> <?php echo $assignment->title ?></div>
                     <div class="post-info">

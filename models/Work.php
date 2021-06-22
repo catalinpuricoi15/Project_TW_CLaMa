@@ -9,9 +9,16 @@ class Work extends DbModel
     public string $idAssignment = '';
     public string $idUser = '';
     public float $grade = 0.0;
-    public string $file = '';
+    public mixed $file = '';
     public string $comment = '';
-    //public string $message = '';
+
+    public function rules(): array
+    {
+        return [
+            'comment' => [self::RULE_REQUIRE],
+            'file'  => [self::RULE_REQUIRE]
+        ];
+    }
 
     public function tableName(): string
     {
@@ -26,11 +33,6 @@ class Work extends DbModel
     public static function primaryKey(): string
     {
         return 'id';
-    }
-
-    public function rules(): array
-    {
-        return [];
     }
 
     public function getGrade(){

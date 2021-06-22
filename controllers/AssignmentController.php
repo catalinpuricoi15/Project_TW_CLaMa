@@ -48,7 +48,7 @@ class AssignmentController extends Controller
         $classForm = ClassForm::findOne(['id' => $idClass]);
 
         if ($assignment->validate()) {
-            if(array_key_exists('file', $request->getBody()) && $_FILES['file']['size'] != 0) {
+            if(array_key_exists('file', $_FILES) && $_FILES['file']['size'] != 0) {
                 $fileName = Application::$app->user->getDisplayUsername() . "_" . date("Y-M-D");
                 $fileDestinationPath = "/storage/filesProfessorsAssignments/$fileName";
                 $assignment->file = FileManager::uploadFile('file', $fileDestinationPath);

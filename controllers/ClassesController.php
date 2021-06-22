@@ -55,6 +55,7 @@ class ClassesController extends Controller
 
         $catalog->assignments = $assignments;
         $catalog->students = $students;
+        $catalog->idClass = $idClass;
 
         return $this->render('catalog',['catalog' => $catalog]);
     }

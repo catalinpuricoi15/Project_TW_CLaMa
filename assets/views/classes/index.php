@@ -1,8 +1,14 @@
+<?php
 
+/** @var $classes ClassForm */
+
+use models\ClassForm;
+
+?>
 
 <div class="main-box ">
 
-    <div id="actions" class="page-aligned">
+    <div id="main-actions" class="page-aligned">
         <br><br><br><br>
         <?php if (!core\Application::$app->user->isStudent()): ?>
             <a class="submit-btn" name="submit-btn" id="submit-btn" href="/newClass"> creeaza o noua clasa</a>

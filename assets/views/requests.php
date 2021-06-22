@@ -1,3 +1,8 @@
+<?php /***
+ * @var $requests
+ */
+?>
+
 <div class="main-box ">
 
     <div class="page-aligned">

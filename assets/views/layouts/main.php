@@ -6,9 +6,9 @@
 <html lang="en">
 
 <head>
-    <title><?php use core\Application;
-
-        echo $this->title ?></title>
+    <title>
+        ClassHub
+    </title>
 
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/classes.css">
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/css/helpers.css">
     <link rel="stylesheet" href="/css/catalog.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ClassHub">
 
 </head>
 

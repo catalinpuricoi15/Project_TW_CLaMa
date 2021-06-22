@@ -49,7 +49,6 @@ class RequestController extends Controller
             $response->redirect("/classes");
             return;
         }
-        //ADD EXCEPTION/RESPOND
 
         return $response->redirect("/classes");
 
@@ -58,7 +57,7 @@ class RequestController extends Controller
     public function validateRequest(Request $request, Response $response)
     {
 
-        header("Access-Contorl-Allow-Origin:*");
+        header("Access-Control-Allow-Origin:*");
         header("Content-Type: application/json; charset=UTF-8");
         header("Access-Control-Allow-Methods: POST");
         header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With");
@@ -66,7 +65,7 @@ class RequestController extends Controller
         $id = $request->getParamForRoute('/class/request/');
         $classRequest = Model::findOne(['id' => $id]);
         $accepted = $request->getBody()['accepted'];
-        if ($accepted) {
+        if ($accepted == "true") {
             $classRequest->saveRelationship(['idUser' => $classRequest->idUser,
                 'idClass' => $classRequest->idClass
             ], 'students_classes');
