@@ -25,5 +25,3 @@ use core\form\Form;
     <?php echo Form::end() ?>
 
 </div>
-
-<script src="/js/home.js"></script>
