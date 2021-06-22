@@ -65,9 +65,9 @@ function mediaAritmetica(index) {
     let studentGrades = grades[index];
     let sum = 0;
 
-    for (const studentGrade in studentGrades) {
-        if ((typeof studentGrade) != "string") {
-            sum += studentGrade;
+    for (let i = 0; i < studentGrades.length; i++) {
+        if ((typeof studentGrades[i]) != "string") {
+            sum += studentGrades[i];
         }
     }
     return Math.round(sum / studentGrades.length);

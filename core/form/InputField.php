@@ -42,11 +42,10 @@ class InputField extends BaseField
 
     public function renderInput(): string
     {
-        return sprintf('<input type="%s" name="%s" placeholder="%s" value="%s" class="input-field">',
+        return sprintf('<input type="%s" name="%s" placeholder="%s" class="input-field">',
             $this->type,
             $this->attribute,
-            $this->model->getLabel($this->attribute),
-            $this->model->{$this->attribute},
+            $this->model->getLabel($this->attribute)
         );
     }
 
