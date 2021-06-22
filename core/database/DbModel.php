@@ -160,7 +160,6 @@ abstract class DbModel extends Model
 
     public function saveRelationship(array $payload, string $tableName)
     {
-
         $attributes = array_keys($payload);
         $parameters = array_values($payload);
         $parameterizedAttributes = array_map(function ($param) {

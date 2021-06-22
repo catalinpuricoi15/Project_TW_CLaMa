@@ -1,7 +1,8 @@
-<?php
-/** @var $this \core\View */
+<?php /***
+* @var $this \core\View
+ */
 
-$this->title = 'ClassHub-Settings';
+use core\form\Form;
 
 ?>
 
@@ -13,7 +14,7 @@ $this->title = 'ClassHub-Settings';
 <br>
 <div class="auth-box">
 
-    <?php $form = \core\form\Form::begin("/settings", "post", 'updateAccountData') ?>
+    <?php $form = Form::begin("/settings", "post", 'updateAccountData') ?>
 
     <?php echo $form->field(\core\Application::$app->user, 'username') ?>
     <?php echo $form->field(\core\Application::$app->user, 'adress') ?>
@@ -21,8 +22,8 @@ $this->title = 'ClassHub-Settings';
 
     <button type="submit" class="submit-btn space" id="submit-btn">Save</button>
 
-    <?php echo \core\form\Form::end() ?>
+    <?php echo Form::end() ?>
 
 </div>
 
-<script src="../js/home.js"></script>
+<script src="/js/home.js"></script>

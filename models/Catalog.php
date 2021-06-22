@@ -2,6 +2,7 @@
 
 namespace models;
 
+use core\database\DbModel;
 use core\Model;
 
 class Catalog extends Model
@@ -16,4 +17,10 @@ class Catalog extends Model
             'idClass' => [self::RULE_REQUIRE],
         ];
     }
+
+    public function class(){
+        return ClassForm::findOne(['id' => $this->idClass]);
+    }
+
+
 }

@@ -1,8 +1,3 @@
-<?php
-
-use core\Application;
-
-?>
 
 <div class="main-box center">
 

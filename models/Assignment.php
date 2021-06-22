@@ -20,7 +20,7 @@ class Assignment extends DbModel
             'idClass' => [self::RULE_REQUIRE],
             'title' => [self::RULE_REQUIRE],
             'requirement' => [self::RULE_REQUIRE],
-            'deadline' => [self::RULE_REQUIRE]
+            'deadline' => [self::RULE_REQUIRE],
         ];
     }
 

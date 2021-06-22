@@ -1,10 +1,13 @@
-<? php /***
+<?php /***
  * @var $model \models\User;
  */
+
+use core\form\Form;
+
 ?>
 
 <!--Login-->
-<?php $form = \core\form\Form::begin('', "post", 'login') ?>
+<?php $form = Form::begin('login', "post", 'login') ?>
 
 <?php echo $form->field($model, 'email') ?>
 
@@ -12,12 +15,12 @@
 
 <button type="submit" class="submit-btn" name="button-login" id="button-login">Log In</button>
 
-<?php echo \core\form\Form::end() ?>
+<?php echo Form::end() ?>
 
 <!--Register-->
 
 
-<?php $form = \core\form\Form::begin('', "post", 'register') ?>
+<?php $form = Form::begin('register', "post", 'register') ?>
 
 <?php echo $form->field($model, 'username') ?>
 <?php echo $form->field($model, 'email') ?>
@@ -37,5 +40,5 @@
 
 <button type="submit" class="submit-btn" name="button-register" id="button-register">Register</button>
 
-<?php echo \core\form\Form::end() ?>
+<?php echo Form::end() ?>
 

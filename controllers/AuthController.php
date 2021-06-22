@@ -45,22 +45,6 @@ class AuthController extends Controller
 
             if ($user->validate() && $user->save()) {
 
-//                $to = $email;
-//                $subject = "Email verification";
-//                $message = "
-//                <html>
-//                <head>
-//                <body>
-//                <p><strong>
-//                Domnule/Doamna {$user->getFullName()}
-//
-//
-//</strong></p>
-//</body>
-//
-//</head>"
-//                </html>;
-
                 Application::$app->session->setFlash('success', 'Inregistrare realizata cu succes!!');
                 Application::$app->response->redirect('/login');
                 exit;

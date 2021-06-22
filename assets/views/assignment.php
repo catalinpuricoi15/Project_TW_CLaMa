@@ -1,8 +1,4 @@
-<? php /***
- * @var $assignment \models\Assignment;
- * @var $works \models\Work;
- */
-?>
+
 
 <div class="main-box ">
 
@@ -16,13 +12,14 @@
         <br><br>
         <h1 id="attendance-code">
             Generati codul pentru prezenta laborator:
+        </h1>
 
             <?php $form = Form::begin('/createCodAttendance', "post", 'createCodAttendance') ?>
             <input type="hidden" class="" name="idAssignment" value="<?php echo $assignment->id ?>">
             <button type="submit" class="page-btn"> Cod prezenta</button>
             <?php echo Form::end() ?>
             <?php if ($assignment->code_attendance != ''): ?>
-            <br>
+                <br>
                 <h3>Codul este valabil 10 minute: <?php echo $assignment->code_attendance ?></h3>
             <?php endif; ?>
 
@@ -41,7 +38,6 @@
                     <?php echo Form::end() ?>
                 <?php endif; ?>
             <?php endif; ?>
-        </h1>
         <br>
         <br>
 
@@ -57,12 +53,12 @@
                     <div class="post-title">
                         <div><?php echo $work->getStudent()->getFullName() ?>  </div>
                         <div class="align-start flex">Nota:
-                            <?php $form = \core\form\Form::begin('/addGrade', "post", 'addGrade') ?>
+                            <?php $form = Form::begin('/addGrade', "post", 'addGrade') ?>
                             <input type="text" name="grade" placeholder="Adauga o nota, ex = 9.50"
                                    value="<?php echo $work->grade != 0 ? $work->grade : '' ?>" class=""> / 10
                             <input type="hidden" name="idWork" value="<?php echo $work->id ?>">
                             <button type="submit"> Salveaza nota</button>
-                            <?php echo \core\form\Form::end() ?>
+                            <?php echo Form::end() ?>
                         </div>
                     </div>
                     <div class="post-content news-description"><?php echo $work->comment ?></div>
